@@ -1,5 +1,7 @@
 package controllers;
 
+import filefinder.FileSearcher;
+import models.WriteToModel;
 import play.mvc.Controller;
 
 /**
@@ -7,7 +9,13 @@ import play.mvc.Controller;
  */
 public class FFinder extends Controller{
     public static void find(String strToFind) {
-
-        renderJSON(strToFind);
+        if (strToFind.length() == 0)
+            renderText("No parameter");
+        WriteToModel writeToModel;
+        writeToModel = new WriteToModel();
+        FileSearcher fileSearcher;
+        fileSearcher = new FileSearcher(strToFind, writeToModel);
+        fileSearcher.run();
+        renderJSON(writeToModel.getFinderAnswerLinkedList());
     }
 }

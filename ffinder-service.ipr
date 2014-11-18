@@ -159,11 +159,11 @@
   </component>
   <component name="libraryTable">
     <library name="filefinder">
-      <CLASSES />
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/filefinder.jar!/" />
+      </CLASSES>
       <JAVADOC />
-      <SOURCES>
-        <root url="file://$PROJECT_DIR$/../filefinder/src" />
-      </SOURCES>
+      <SOURCES />
     </library>
   </component>
 </project>
